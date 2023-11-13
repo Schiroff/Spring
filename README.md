@@ -1,11 +1,13 @@
 # Jogo da Velha em Spring Boot
 
-Este é um projeto simples de Jogo da Velha usando Spring Boot e Thymeleaf.
+Este é um projeto de aplicação web funcional de jogo da velha. O Spring Boot facilita a configuração e a criação de aplicativos web, enquanto o Thymeleaf simplifica a integração de dados dinâmicos na interface do usuário.
+
 
 ## Classe “JogoVelha”:
 
 Quando a aplicação for  executada, o método main é chamado, o método main invoca “SpringApplication.run”, que inicia o Spring Boot, o Spring Boot, por meio da anotação @SpringBootApplication, configura automaticamente a aplicação e inicia um servidor embutido.
 Esta classe é usada como o ponto de entrada para a aplicação Spring Boot, fazendo a configuração e inicializando a aplicação para que seja executada a lógica do jogo.
+
 
 ## Classe “Game”:
 
@@ -25,7 +27,10 @@ switchPlayer(): Alterna o jogador atual.
 checkWinner(int row, int col): Verifica se há um vencedor após um movimento.
 checkDraw(): Verifica se o jogo terminou em empate.
 
+
 ## classe “ControleJogo”:
+
+Responsável por gerenciar a interação entre a lógica do jogo e a interface web.
 
 @Controller Annotation: Indica que esta classe é um controlador Spring MVC.
 
@@ -52,26 +57,8 @@ Redireciona de volta para a página inicial após reiniciar o placar.
 
 ## Arquivo Html “game.html”: 
 
-Este Html forma o jogo da velha e o placar.
+Este Html forma o jogo da velha e o placar. Desempenha um papel central na apresentação e na interação do Jogo da Velha na web.
 
-<body>:
-Contém o título do jogo, placar de vitórias, tabuleiro de jogo e informações sobre o jogador atual. Utiliza Thymeleaf para integrar dados dinâmicos da aplicação no HTML.
-
-<table>:
-Representa o tabuleiro do jogo com células interativas.
-
-<button>:
-Cada célula do tabuleiro é representada por um botão. Utiliza Thymeleaf para definir classes dinâmicas com base no conteúdo da célula (X, O).
-
-<form>:
-Cada botão está contido em um formulário para enviar a jogada ao servidor.
-Campos ocultos dentro do formulário armazenam a posição da célula jogada.
-
-<p>:
-Mostra o jogador atual no momento.
-
-<form>:
-Permite ao usuário zerar o placar
 
 Fluxo:
 “JogoVelha” inicia a aplicação Spring Boot.
@@ -83,12 +70,13 @@ O template HTML exibe dinamicamente o estado atual do jogo.
 ## Tecnologias Utilizadas
 
 - Spring Boot
-- Thymeleaf (para as páginas HTML)
+- Thymeleaf
 - Java
+- -Html
+- Css
+
 
 - # Autor
 
 - Lucas Vinicius Schiroff
 - Turma A
-
-Esses componentes trabalham em conjunto para criar uma aplicação web funcional de jogo da velha. O Spring Boot facilita a configuração e a criação de aplicativos web, enquanto o Thymeleaf simplifica a integração de dados dinâmicos na interface do usuário.
