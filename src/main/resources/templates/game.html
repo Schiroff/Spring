@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Metadados da pagina -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+
+    <!-- Estilos CSS -->
+    <style>
+        /* Pagina */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+
+        /* Titulo */
+        h1 {
+            font-size: 36px;
+            color: #333;
+            text-shadow: 2px 2px 2px #ccc;
+            margin-bottom: 20px;
+        }
+
+        /* Placar */
+        p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        /* Tabuleiro */
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+            width: 300px;
+            background-color: #fff; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra tabuleiro */
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid #ccc; /* bordas */
+            text-align: center;
+        }
+
+        td {
+            width: 80px;
+            height: 80px;
+        }
+
+        /* Estilo dos botoes que foram marcados (X e O) */
+        button.x-marked {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        button.o-marked {
+            background-color: #2196F3;
+            color: white;
+        }
+
+        button {
+            padding: 15px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s; /* Transição */
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Destaque botão pressionado */
+        button:active {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Jogo da Velha</h1>
+
+    <!-- Placar de vitorias -->
+    <p th:text="'Vitorias do Jogador X: ' + ${playerXWins}"></p>
+    <p th:text="'Vitorias do Jogador O: ' + ${playerOWins}"></p>
+
+    <!-- Tabuleiro do jogo -->
+    <table>
+        <!-- Loop para cada linha do tabuleiro -->
+        <tr th:each="row, rowStat : ${board}">
+            <!-- Loop para cada celula da linha -->
+            <td th:each="cell, colStat : ${row}">
+                <!-- Formulario para enviar a jogada ao servidor -->
+                <form th:action="@{/makeMove}" method="post">
+                    <!-- Campos para enviar a posiçao da celula jogada -->
+                    <input type="hidden" name="row" th:value="${rowStat.index}">
+                    <input type="hidden" name="col" th:value="${colStat.index}">
+                    <!-- Botao interativo baseada no conteúdo da celula -->
+                    <button th:class="${cell == 'X' ? 'x-marked' : (cell == 'O' ? 'o-marked' : '')}" type="submit"
+                        th:text="${cell}"></button>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Exibir o jogador atual -->
+    <p th:text="'Jogador Atual: ' + ${currentPlayer}"></p>
+
+    <!-- Formulario para zerar o placar -->
+    <form th:action="@{/resetScore}" method="post">
+        <button type="submit">Zerar Placar</button>
+    </form>
+
+</body>
+
+</html>
