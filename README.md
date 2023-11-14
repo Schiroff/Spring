@@ -18,17 +18,28 @@ Esta classe é usada como o ponto de entrada para a aplicação Spring Boot, faz
 Este código implementa a lógica completa do jogo da velha, ele permite o movimentos dos jogadores, faz a verificação de vitórias, empates e mantém o placar.
 
 board = new char[3][3]: Usada para fazer a representação do tabuleiro do jogo.
+
 currentPlayer = 'X': Indica qual o jogador da vez, “X” ou “O”
+
 playerXWins = 0, playerOWins = 0: Utilizado para fazer a contagem das vitórias individuais.
+
 public Game(): Inicializa o tabuleiro, define o jogador atual como 'X', inicializa o placar.
 Chama o método “initializeBoard()” para preencher o tabuleiro com espaços vazios.
+
 getBoard(): Mostra o estado atual do tabuleiro.
+
 getCurrentPlayer(): Demonstra o jogador da vez..
+
 getPlayerXWins(), getPlayerOWins(): Mostra as vitórias de cada jogador.
+
 makeMove(int row, int col): Realiza um movimento no jogo, verifica vitória, empate ou troca de jogador.
+
 initializeBoard(): Preenche o tabuleiro com espaços vazios.
+
 switchPlayer(): Alterna o jogador atual.
+
 checkWinner(int row, int col): Verifica se há um vencedor após um movimento.
+
 checkDraw(): Verifica se o jogo terminou em empate.
 
 
@@ -70,12 +81,15 @@ Redireciona de volta para a página inicial após reiniciar o placar.
 Este Html forma o jogo da velha e o placar. Desempenha um papel central na apresentação e na interação do Jogo da Velha na web.
 
 
-Fluxo:
-“JogoVelha” inicia a aplicação Spring Boot.
-“ControleJogo” lida com solicitações HTTP, chamando métodos na classe “Game”.
-“Game” mantém a lógica do jogo, atualizando o estado do tabuleiro e placares.
-O template HTML exibe dinamicamente o estado atual do jogo.
+# Fluxo:
+A aplicação Spring Boot é inicializada, criando uma instância do jogo (Game), é configurado com um tabuleiro vazio, o primeiro a jogar sera o "X", e o placar é zerado.
+Quando o usuário acessa a página principal ("/"), o método showGame é chamado.
+Dados do jogo serão exibidos na página, tabuleiro, placar e o jogador atual.
+Quando o usuário realizar uma jogada, o método makeMove sera acionado, verifica se há um vencedor ou empate.
 
+Thymeleaf é usado para renderizar dinamicamente a página HTML, o tabuleiro é atualizado, mostrando as jogadas realizadas pelos jogadores, os elementos do jogo como placar, jogador da vez serão exibidos conforme o estado do jogo.
+
+Se o usuário clicar no botão "Zerar Placar", o método resetScore é acionado e o placar é reiniciado.
 
 ## Tecnologias Utilizadas
 
@@ -84,10 +98,16 @@ O template HTML exibe dinamicamente o estado atual do jogo.
 - Java
 - Html
 - Css
+- Java Script
+- Maven
 
 # Resultado Final
 
 ![Captura de tela 2023-11-11 152106](https://github.com/Schiroff/Spring/assets/141790203/f77f73f6-c58d-40b2-9fea-731ae1c305f6)
+
+# Conclusão
+
+O código é um jogo da velha interativo, a lógica do jogo (Game) é gerenciada em Java, enquanto o controle das interações web é feito pelo controlador Spring (ControleJogo). Thymeleaf faz com que a pagian seja atualizada conforme o estado do jogo se altera, o fluxo vai desde a inicialização do jogo até a manipulação de jogadas, verificação de vencedores, atualização da interface e reinicialização do placar.
 
 - # Autor
 
