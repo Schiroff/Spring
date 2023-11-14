@@ -4,6 +4,7 @@ Este é um projeto de aplicação web funcional de jogo da velha. O Spring Boot 
 
 
 ## Classe “JogoVelha”:
+![Captura de tela 2023-11-11 123235](https://github.com/Schiroff/Spring/assets/141790203/832c6f98-47e0-42ea-a6e5-e9cac2efbfc2)
 
 Quando a aplicação for  executada, o método main é chamado, o método main invoca “SpringApplication.run”, que inicia o Spring Boot, o Spring Boot, por meio da anotação @SpringBootApplication, configura automaticamente a aplicação e inicia um servidor embutido.
 Esta classe é usada como o ponto de entrada para a aplicação Spring Boot, fazendo a configuração e inicializando a aplicação para que seja executada a lógica do jogo.
