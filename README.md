@@ -11,6 +11,9 @@ Esta classe é usada como o ponto de entrada para a aplicação Spring Boot, faz
 
 
 ## Classe “Game”:
+![Captura de tela 2023-11-11 124257](https://github.com/Schiroff/Spring/assets/141790203/dc3725c9-89ca-4bcc-bec2-2d44c9756ca2)
+![Captura de tela 2023-11-11 124337](https://github.com/Schiroff/Spring/assets/141790203/3bfff251-a37e-4013-af62-d51bd6268992)
+![Captura de tela 2023-11-11 124420](https://github.com/Schiroff/Spring/assets/141790203/34f26ada-30c7-44df-ad95-ac99444be59c)
 
 Este código implementa a lógica completa do jogo da velha, ele permite o movimentos dos jogadores, faz a verificação de vitórias, empates e mantém o placar.
 
@@ -30,6 +33,8 @@ checkDraw(): Verifica se o jogo terminou em empate.
 
 
 ## classe “ControleJogo”:
+
+![Captura de tela 2023-11-11 131529](https://github.com/Schiroff/Spring/assets/141790203/9743bbf8-5d49-4762-ae67-be4ecdbb12b5)
 
 Responsável por gerenciar a interação entre a lógica do jogo e a interface web.
 
@@ -58,6 +63,10 @@ Redireciona de volta para a página inicial após reiniciar o placar.
 
 ## Arquivo Html “game.html”: 
 
+![Captura de tela 2023-11-11 133922](https://github.com/Schiroff/Spring/assets/141790203/0cb8512b-d4cf-42fd-a3cc-8219fdec97e7)
+![Captura de tela 2023-11-11 134037](https://github.com/Schiroff/Spring/assets/141790203/2d8333d2-e2b7-443d-9897-f0788102f1f3)
+![Captura de tela 2023-11-11 134138](https://github.com/Schiroff/Spring/assets/141790203/cfe6a301-7ca6-4fc7-b781-4d26abee2768)
+
 Este Html forma o jogo da velha e o placar. Desempenha um papel central na apresentação e na interação do Jogo da Velha na web.
 
 
@@ -73,9 +82,12 @@ O template HTML exibe dinamicamente o estado atual do jogo.
 - Spring Boot
 - Thymeleaf
 - Java
-- -Html
+- Html
 - Css
 
+# Resultado Final
+
+![Captura de tela 2023-11-11 152106](https://github.com/Schiroff/Spring/assets/141790203/f77f73f6-c58d-40b2-9fea-731ae1c305f6)
 
 - # Autor
 
